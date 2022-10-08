@@ -27,9 +27,9 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("Employee Service")
                 .description("Sample Documentation Generateed Using SWAGGER2 for our Employee Rest API")
-                .termsOfServiceUrl("https://www.youtube.com/channel/UCORuRdpN2QTCKnsuEaeK-kQ")
+                .termsOfServiceUrl("https://termify.io/")
                 .license("Martin tresor License")
-                .licenseUrl("https://www.youtube.com/channel/UCORuRdpN2QTCKnsuEaeK-kQ")
+                .licenseUrl("https://www.gnu.org/licenses/gpl-3.0.html")
                 .version("2.0").build();
     }
 }
