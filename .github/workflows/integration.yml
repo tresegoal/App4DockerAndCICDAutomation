@@ -1,4 +1,4 @@
-name: Doit s'executer dans un custom runner
+name: workflow example
 on: 
   schedule: 
     - cron: "0 08 * * *"
