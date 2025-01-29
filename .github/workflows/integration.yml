@@ -1,0 +1,32 @@
+name: Doit s'executer dans un custom runner
+on: 
+  schedule: 
+    - cron: "0 08 * * *"
+  workflow_dispatch:
+  push: 
+    branches: 
+      - master
+      - main
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v2
+      - name: set up java
+        uses: actions/setup-java@v4
+        with: 
+          distribution: "microsoft"
+          java-version: "21"
+      - name: create zip bundle
+        run: |
+          pwd
+          cd /home/runner/work/github-custom-runner/github-custom-runner
+          zip -r ../${{github.sha}}.zip .
+      - name: archieve artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: /home/runner/work/github-custom-runner/github-custom-runner
+          overwrite: true
