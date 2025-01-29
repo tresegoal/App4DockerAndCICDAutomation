@@ -21,7 +21,7 @@ jobs:
       - name: Display workspace and files
         run: |
           echo "${{ github.workspace }}"
-          ls -a ${{ github.workspace }}
+          ls ${{ github.workspace }}
       - name: checkout the code
         uses: actions/checkout@v2
       - name: set up java
@@ -40,3 +40,5 @@ jobs:
           name: my-artifact
           path: /home/runner/work/App4DockerAndCICDAutomation/App4DockerAndCICDAutomation
           overwrite: true
+      - name: Display job status
+        run: echo "Job status is ${{ job.status}}"
