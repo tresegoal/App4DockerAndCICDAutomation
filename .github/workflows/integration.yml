@@ -13,11 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display the event that triggered the workflow
-        run: echo "The job was triggered by a ${{ github.event.name}} event."
+        run: echo "The job was triggered by a ${{ github.event_name}} event."
       - name: Display runner information
         run: echo "The job is running on ${{ runner.os}} server hosted by github"
       - name: Display information about the repository
         run: echo "The repository of this job is ${{ github.repository}} and the branch use is ${{ github.ref}}"
+      - name: Display workspace and files
+        run: |
+          echo "${{ github.workspace}}"
+          cd ${{ github.workspace }}
+          ls -a
       - name: checkout the code
         uses: actions/checkout@v2
       - name: set up java
