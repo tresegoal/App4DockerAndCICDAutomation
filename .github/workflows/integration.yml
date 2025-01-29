@@ -22,11 +22,11 @@ jobs:
       - name: create zip bundle
         run: |
           pwd
-          cd /home/runner/work/github-custom-runner/github-custom-runner
+          cd /home/runner/work/App4DockerAndCICDAutomation/App4DockerAndCICDAutomation
           zip -r ../${{github.sha}}.zip .
       - name: archieve artifact
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: /home/runner/work/github-custom-runner/github-custom-runner
+          path: /home/runner/work/App4DockerAndCICDAutomation/App4DockerAndCICDAutomation
           overwrite: true
