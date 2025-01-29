@@ -20,9 +20,8 @@ jobs:
         run: echo "The repository of this job is ${{ github.repository}} and the branch use is ${{ github.ref}}"
       - name: Display workspace and files
         run: |
-          echo "${{ github.workspace}}"
-          cd ${{ github.workspace }}
-          ls -a
+          echo "${{ github.workspace }}"
+          ls -a ${{ github.workspace }}
       - name: checkout the code
         uses: actions/checkout@v2
       - name: set up java
